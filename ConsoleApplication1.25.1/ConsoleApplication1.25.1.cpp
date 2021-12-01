@@ -14,7 +14,7 @@ struct note {
 	string family;
 	vector <note> listSubscribers;
 };
-note subscriber;
+
 
 int main()
 {
@@ -43,7 +43,6 @@ int main()
 				cerr << "\nThe file is not found. ";
 				return 1;
 			}
-			map<string, string> phonebook;
 			while (!file.eof()) {
 				file >> strTel >> strName;
 				pair<string, string>addSubscriber(strTel, strName);
@@ -94,6 +93,7 @@ int main()
 				file.close();
 		}
 		else if (action == 3) {
+			note subscriber;
 			fstream file("C:\\Users\\Александр\\Documents\\text for program\\phonebook.txt",ios::out|ios::app);
 			if (file.is_open()) {
 				cout << "\nThe file is open.";
