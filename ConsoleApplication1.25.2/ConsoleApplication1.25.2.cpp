@@ -26,6 +26,7 @@ int main()
 				cout << "\nВведите фамилию пациента английскими буквами.";
 				cin >> key;
 				meaning = key;
+				key += to_string(i);
 				pair<string, string> assign(key, meaning);
 				registry.insert(assign);			
 				}
@@ -36,8 +37,8 @@ int main()
 					count++;
 			}
 		}
-		if (action == 2) {
-			if (registry.begin() == registry.end()) {
+		else if (action == 2) {
+			if (registry.empty()) {
 				cout << "\nСоставте список пациентов (пункт a).";
 			}
          else {

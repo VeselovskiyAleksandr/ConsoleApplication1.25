@@ -19,11 +19,6 @@ int main()
 	cin >> str1;
 	cout << "\nВведите второе слово: ";
 	cin >> str2;
-    if (str1.length() != str2.length()) { //
-			anagram = false;
-			cout << "\nДанные слова анаграммами не являются.";
-			return 1;
-		}
 	for (int i = 0; i < str1.length(); i++) {
 		word1[i] = str1[i];
 		for (int j = 0; j < str2.length(); j++) {
@@ -33,14 +28,15 @@ int main()
 				word2.erase(j);
 				count++;
 				break;
-			}	
-			if (count != i) {
-				
-				anagram = false;
-				break;
-			}
+			}			
 		}
 	}
+     if(count== str2.length()&& count == str1.length()) {
+				anagram = true;
+			}
+     else {
+	             anagram = false;
+             }
 	if (anagram) {
 		cout << "\nДанные слова являются анаграммами.";
 	}
