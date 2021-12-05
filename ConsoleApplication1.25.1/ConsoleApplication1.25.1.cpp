@@ -35,7 +35,7 @@ int main()
 		cout << "\nдля выхода введите 0";
 		cin >> action;
 		if (action == 1) {			
-			fstream file("C:\\Users\\Александр\\Documents\\text for program\\phonebook.txt");	
+			fstream file("C:\\Users\\Александр\\Documents\\text for program\\phonebook.txt");
 			if (file.is_open()) {
 				cout << "\nThe file is open.";
 			}

@@ -33,12 +33,14 @@ int main()
 				word2.erase(j);
 				count++;
 				break;
-			}			
-		}
-		if (count == i) {
-			anagram = false;
-			break;
-		}
+			}	
+	  }	
+if (count == i) {
+				anagram = false;
+				break;
+			}
+cout << count << " ";
+
 	}
 	if (anagram) {
 		cout << "\nДанные слова являются анаграммами.";
