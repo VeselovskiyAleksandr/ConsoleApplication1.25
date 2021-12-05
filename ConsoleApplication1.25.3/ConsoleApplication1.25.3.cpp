@@ -39,8 +39,6 @@ if (count == i) {
 				anagram = false;
 				break;
 			}
-cout << count << " ";
-
 	}
 	if (anagram) {
 		cout << "\nДанные слова являются анаграммами.";
