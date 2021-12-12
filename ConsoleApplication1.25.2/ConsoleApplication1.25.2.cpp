@@ -4,7 +4,6 @@
 #include <iostream>
 #include <map>
 #include <string>
-//#include <locale.h>
 using namespace std;
 
 int main()
@@ -53,7 +52,7 @@ int main()
 //	} while (action != 0);
 	map<string, int> registry;
 	map<string, int>::iterator reg = registry.begin();
-	string name = "", str1, str2;
+	string name = "";
 	int count = 0;
 	do {
 		cin >> name;
