@@ -4,53 +4,76 @@
 #include <iostream>
 #include <map>
 #include <string>
-#include <locale.h>
+//#include <locale.h>
 using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "Rus");
-	map<string, string>registry;
-	int action = 0, num=0;
-	string key, meaning, next="next";
-	cout << "\nВыберите действие: ";
+	//setlocale(LC_ALL, "Rus");
+//	map<string, string>registry;
+//	int action = 0, num=0;
+//	string key, meaning, next="next";
+//	cout << "\nВыберите действие: ";
+//	do {
+//		cout << "\na) для записи пациентов введите 1";
+//		cout << "\nb) для вызова в регистратуру введите 2";
+	//	cout << "\nc) для завершения работы введите 0.";
+//		cin >> action;
+	//	if (action == 1) {
+//		cout << "\nУкажите количество записываемых пациентов.";
+	//		cin >> num;
+	//		for (int i = 0; i < num; i++) {
+	//			cout << "\nВведите фамилию пациента английскими буквами.";
+	//			cin >> key;
+	//			meaning = key;
+	//			key += to_string(i);
+	//			pair<string, string> assign(key, meaning);
+	//			registry.insert(assign);			
+	//			}
+	//		int count = 1;
+    //            cout << "\nСписок пациентов: ";
+	//			for (map<string, string>::iterator regular = registry.begin(); regular != registry.end(); regular++) {
+	//				cout << "\n"<<count<<") " << regular->second;
+	//				count++;
+	//	}
+	//	}
+	//	else if (action == 2) {
+	///		if (registry.empty()) {
+	//			cout << "\nСоставте список пациентов (пункт a).";
+	//		}
+     //    else {
+		//		cout << next;
+		//		map<string, string>::iterator regular =registry.begin();
+		//		registry.erase(regular);
+		//		for (map<string, string>::iterator regular = registry.begin(); regular != registry.end(); regular++) {
+		//			cout << "\n" << regular->second;
+		//		}
+		//	}
+		//}
+//	} while (action != 0);
+	map<string, int> registry;
+	map<string, int>::iterator reg = registry.begin();
+	string name = "", str1, str2;
+	int count = 0;
 	do {
-		cout << "\na) для записи пациентов введите 1";
-		cout << "\nb) для вызова в регистратуру введите 2";
-		cout << "\nc) для завершения работы введите 0.";
-		cin >> action;
-		if (action == 1) {
-			cout << "\nУкажите количество записываемых пациентов.";
-			cin >> num;
-			for (int i = 0; i < num; i++) {
-				cout << "\nВведите фамилию пациента английскими буквами.";
-				cin >> key;
-				meaning = key;
-				key += to_string(i);
-				pair<string, string> assign(key, meaning);
-				registry.insert(assign);			
-				}
-			int count = 1;
-                cout << "\nСписок пациентов: ";
-				for (map<string, string>::iterator regular = registry.begin(); regular != registry.end(); regular++) {
-					cout << "\n"<<count<<") " << regular->second;
+		cin >> name;
+		if (name == "next") {
+			map<string, int>::iterator reg = registry.begin();
+			registry.erase(reg);
+}
+		else {
+			name += to_string(count);
+
+			pair<string, int> reg(name, count);
+			registry.insert(reg);
+		}
 					count++;
-			}
-		}
-		else if (action == 2) {
-			if (registry.empty()) {
-				cout << "\nСоставте список пациентов (пункт a).";
-			}
-         else {
-				cout << next;
-				map<string, string>::iterator regular =registry.begin();
-				registry.erase(regular);
-				for (map<string, string>::iterator regular = registry.begin(); regular != registry.end(); regular++) {
-					cout << "\n" << regular->second;
-				}
-			}
-		}
-	} while (action != 0);
+		for (map<string, int>::iterator reg = registry.begin(); reg != registry.end(); reg++) {
+						cout << "\n" << reg->first<<" "<<reg->second;
+					}
+	} while (!registry.empty());
+	
+	
 	return 0;
 }
 
