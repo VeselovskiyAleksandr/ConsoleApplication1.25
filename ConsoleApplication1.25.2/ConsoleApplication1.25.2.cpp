@@ -12,7 +12,9 @@ int main()
 	map<string, int>::iterator reg = registry.begin();
 	string name = "";
 	int count = 0;
+	cout << "\n  Registry.\n";
 	do {
+        cout << "\n";
 		cin >> name;
 		if (name == "next"&& registry.begin()!= registry.end()) {
 			map<string, int>::iterator reg = registry.begin();
@@ -26,7 +28,7 @@ int main()
 		}
 					count++;
 		for (map<string, int>::iterator reg = registry.begin(); reg != registry.end(); reg++) {
-						cout << "\n" << reg->first<<" "<<reg->second;
+						cout << "\n"<<"(" << reg->first<<")"<<" "<<reg->second+1;
 					}
 	} while (!registry.empty());	
 	return 0;
