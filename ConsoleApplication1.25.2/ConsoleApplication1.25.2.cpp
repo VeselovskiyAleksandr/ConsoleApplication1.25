@@ -56,7 +56,7 @@ int main()
 	int count = 0;
 	do {
 		cin >> name;
-		if (name == "next") {
+		if (name == "next"&& registry.begin()!= registry.end()) {
 			map<string, int>::iterator reg = registry.begin();
 			registry.erase(reg);
 }
